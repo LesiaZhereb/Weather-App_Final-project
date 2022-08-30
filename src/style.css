@@ -1,0 +1,218 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #8e9f5e;
+  height: 100%;
+  min-width: 320px;
+}
+.widget-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+.weather-widget {
+  width: 100%;
+  max-width: 1300px;
+  max-height: 80vh;
+  padding: 20px 30px;
+  border-radius: 10px;
+  background-color: rgba(235, 233, 238, 0.3);
+  overflow: auto;
+  font-family: "Tapestry", cursive;
+}
+@media all and (min-width: 850px) {
+  .day-base-info {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.weather-widget__header {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+  --input-size: 30px;
+}
+.search-form__input {
+  flex-grow: 1;
+  height: var(--input-size);
+  min-width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.search-form_button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--input-size);
+  height: var(--input-size);
+  margin-left: 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: white;
+}
+.day-base-info {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+}
+.searched_city {
+  text-align: center;
+  font-weight: 600;
+}
+
+.searched_city-info {
+  margin: 0 0 15px;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.searched_city-info > .bi {
+  font-size: 30px;
+}
+.searched_city_dateChange {
+  margin: 0 0 6px;
+  font-size: 27px;
+}
+.weather_indicator_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+  align-items: flex-start;
+}
+.weather_indicator_sign {
+  display: inline-block;
+}
+.weather_indicator {
+  border: none;
+  background: rgba(235, 233, 238, 0);
+  color: #ffffff;
+}
+.searched_city-info__temp {
+  margin: 0 0 6px;
+  font-size: 42px;
+}
+.searched_city-info__status {
+  font-size: 100px;
+  line-height: 1;
+}
+.day-detailed-info {
+  justify-self: center;
+  background: rgba(252, 252, 252, 0);
+  border: solid 1.5px #ffffff;
+  text-align: left;
+  font-size: 20px;
+}
+.day-detailed-info__content {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+  padding: 18px;
+}
+.day-detailed-info__line {
+  display: flex;
+  align-items: center;
+}
+.day-detailed-info__icon {
+  flex-shrink: 0;
+  width: 35px;
+  margin-right: 10px;
+  font-size: 30px;
+  line-height: 1;
+}
+.day-detailed-info__text {
+  flex-grow: 1;
+  margin-right: 5px;
+  margin-bottom: 0;
+  font-size: 26px;
+  line-height: 1.2;
+}
+.changedDay_weather_info {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+.weather_by_hours {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.weather_by_hours_item {
+  margin: 0 30px 20px;
+  text-align: center;
+  font-size: 22px;
+}
+.weather_by_hours__time {
+  display: block;
+}
+.weather_by_hours__temp {
+  margin: 0;
+}
+.weather_by_hours__icon {
+  display: block;
+  margin: 10px 0;
+  font-size: 32px;
+  line-height: 1;
+}
+.forecast-by-days {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.forecast-by-days_item {
+  flex-basis: 17%;
+  max-width: 17%;
+  min-width: 170px;
+  flex-grow: 1;
+  margin: 0 10px 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: solid 1.5px #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 22px;
+}
+.forecast-by-days_day {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.forecast-by-days_icon {
+  display: block;
+  margin: 10px 0;
+  font-size: 32px;
+  line-height: 1;
+}
+.forecast-by-days_temp {
+  margin: 0;
+}
+.forecast-by-days_day_temp {
+  font-weight: bold;
+}
+.codder_item {
+  display: flex;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 200;
+  text-align: center;
+  justify-content: center;
+}
+.codderLinkGit {
+  color: #ffffff;
+}
