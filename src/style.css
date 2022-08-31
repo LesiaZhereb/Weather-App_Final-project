@@ -16,7 +16,7 @@ body {
 .weather-widget {
   width: 100%;
   max-width: 1300px;
-  max-height: 80vh;
+  max-height: 120vh;
   padding: 20px 30px;
   border-radius: 10px;
   background-color: rgba(235, 233, 238, 0.3);
@@ -92,14 +92,25 @@ body {
   align-content: stretch;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 10px;
 }
 .weather_indicator_sign {
   display: inline-block;
 }
 .weather_indicator {
-  border: none;
+  border: 1px solid transparent;
   background: rgba(235, 233, 238, 0);
   color: #ffffff;
+}
+.weather_indicator:hover {
+  background: rgba(235, 233, 238, 0.5);
+  border-radius: 10px;
+  transition: 100ms;
+}
+.weather_indicator:focus {
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: rgba(235, 233, 238, 0);
 }
 .searched_city-info__temp {
   margin: 0 0 6px;
