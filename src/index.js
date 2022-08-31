@@ -2,8 +2,6 @@ let searchButton = document.querySelector(".search_button");
 let locationButton = document.querySelector(".location_button");
 let dateNow = new Date();
 let currentDate = document.querySelector(".searched_city_dateChange");
-let cTemp = document.querySelector(".celsium");
-let fTemp = document.querySelector(".fahrenheit");
 let iconConvert = {
   "01d": "clearsky",
   "01n": "clearsky",
@@ -28,6 +26,15 @@ function capitalizeFirstLetter(inputString) {
   return inputString[0].toUpperCase() + inputString.slice(1);
 }
 
+function timeConvert(unixTimestamp) {
+  const date = new Date(unixTimestamp * 1000);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  const updateHours = hours < 10 ? "0" + hours : hours;
+  const updateMinutes = minutes < 10 ? "0" + minutes : minutes;
+  const time = updateHours + ":" + updateMinutes;
+  return time;
+}
 function showTemperature(response) {
   let cityElement = document.querySelector(".searched_city_name");
   let sunriseTimeElement = document.querySelector(".sunrise_time");
@@ -38,9 +45,10 @@ function showTemperature(response) {
   let pressureElement = document.querySelector(".Pressure_data");
   let tempElement = document.querySelector(".searched_city-info__temp");
   let iconElement = document.querySelector("#icon");
+  celsiusTemperatuire = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  tempElement.innerHTML = Math.round(celsiusTemperatuire);
   sunriseTimeElement.innerHTML = response.data.sys.sunrise;
   sunsetTimeElement.innerHTML = response.data.sys.sunset;
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
@@ -55,27 +63,16 @@ function showTemperature(response) {
 function changeCity(event) {
   const apiKey = "ee4b364710ec488f16dbd059f25342e2";
   let searchedCity = document.querySelector(".search-form__input").value;
+  searchInput = capitalizeFirstLetter(searchInput);
   const apiCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchedCity}&units=metric&appid=${apiKey}`;
-
   const currentCityElement = document.querySelector(".searched_city_name");
 
   if (searchedCity) {
-    //currentCityElement = document.querySelector("searchedCity");
     axios.get(apiCityUrl).then(showTemperature);
   } else {
     alert("Please enter your city");
   }
 }
-
-//function showCityWeather(response) {
-//  const city = response.data.name;
-//  const temperature = Math.round(response.data.main.temp);
-//  const currentCity = document.querySelector(".searched_city_name");
-//  const tempElement = document.querySelector(".searched_city-info__temp");
-//
-//  currentCity.innerHTML = city;
-//  tempElement.innerHTML = temperature;
-//}
 
 function handlePosition(position) {
   const apiKey = "ee4b364710ec488f16dbd059f25342e2";
@@ -128,17 +125,31 @@ function changedDate(date) {
   let formattedDate = ` ${month} ${todayDate}<br />${day} ${time}`;
   return formattedDate;
 }
+let temperatureType = "celsius";
 
 function cToF(event) {
+  if (temperatureType === "farenheit") {
+    return;
+  }
   let tempElement = document.querySelector(".searched_city-info__temp");
-  let fTempConvert = (tempElement.innerText * 9) / 5 + 32;
+  let fTempConvert = (celsiusTemperatuire * 9) / 5 + 32;
   tempElement.innerHTML = fTempConvert;
+
+  temperatureType = "farenheit";
 }
 
 function fToC(event) {
-  let tempElement = document.querySelector("searched_city-info__temp");
-  let cTempConvert = ((tempElement.innerText - 32) * 5) / 9;
-  tempElement.innerHTML = cTempConvert;
+  if (temperatureType === "celsius") {
+    return;
+  }
+
+  console.dir(celsiusTemperatuire);
+
+  let tempElement = document.querySelector(".searched_city-info__temp");
+
+  tempElement.innerHTML = Math.round(celsiusTemperatuire);
+
+  temperatureType = "celsius";
 }
 
 searchButton.addEventListener("click", changeCity);
