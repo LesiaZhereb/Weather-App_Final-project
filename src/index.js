@@ -1,7 +1,6 @@
-let searchButton = document.querySelector(".search_button");
-let locationButton = document.querySelector(".location_button");
 let dateNow = new Date();
 let currentDate = document.querySelector(".searched_city_dateChange");
+let temperatureType = "celsius";
 let iconConvert = {
   "01d": "clearsky",
   "01n": "clearsky",
@@ -61,6 +60,7 @@ function showTemperature(response) {
 }
 
 function changeCity(event) {
+  event.preventDefault();
   const apiKey = "ee4b364710ec488f16dbd059f25342e2";
   let searchedCity = document.querySelector(".search-form__input").value;
   searchInput = capitalizeFirstLetter(searchInput);
@@ -85,6 +85,7 @@ function handlePosition(position) {
 }
 
 function showLocationWeather(event) {
+  event.preventDefault();
   navigator.geolocation.getCurrentPosition(handlePosition);
 }
 
@@ -125,7 +126,6 @@ function changedDate(date) {
   let formattedDate = ` ${month} ${todayDate}<br />${day} ${time}`;
   return formattedDate;
 }
-let temperatureType = "celsius";
 
 function cToF(event) {
   event.preventDefault();
