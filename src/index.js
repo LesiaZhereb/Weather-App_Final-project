@@ -3,6 +3,10 @@ let locationButton = document.querySelector(".location_button");
 let dateNow = new Date();
 let currentDate = document.querySelector(".searched_city_dateChange");
 let temperatureType = "celsius";
+let cTemp = document.querySelector(".celsium");
+let fTemp = document.querySelector(".fahrenheit");
+let celsiusTemperature = "0";
+
 let iconConvert = {
   "01d": "clearsky",
   "01n": "clearsky",
@@ -146,8 +150,6 @@ function fToC(event) {
   if (temperatureType === "celsius") {
     return;
   }
-
-  console.dir(celsiusTemperatuire);
 
   let tempElement = document.querySelector(".searched_city-info__temp");
 

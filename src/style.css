@@ -96,6 +96,7 @@ body {
 }
 .weather_indicator_sign {
   display: inline-block;
+  margin-left: 5px;
 }
 .weather_indicator {
   border: 1px solid transparent;
