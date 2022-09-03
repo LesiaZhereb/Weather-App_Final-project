@@ -1,3 +1,5 @@
+let searchButton = document.querySelector(".search_button");
+let locationButton = document.querySelector(".location_button");
 let dateNow = new Date();
 let currentDate = document.querySelector(".searched_city_dateChange");
 let temperatureType = "celsius";
