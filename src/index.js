@@ -50,12 +50,12 @@ function showTemperature(response) {
   let pressureElement = document.querySelector(".Pressure_data");
   let tempElement = document.querySelector(".searched_city-info__temp");
   let iconElement = document.querySelector("#icon");
-  celsiusTemperatuire = response.data.main.temp;
+  celsiusTemperature = response.data.main.temp;
 
   cityElement.innerHTML = response.data.name;
-  tempElement.innerHTML = Math.round(celsiusTemperatuire);
-  sunriseTimeElement.innerHTML = response.data.sys.sunrise;
-  sunsetTimeElement.innerHTML = response.data.sys.sunset;
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+  sunriseTimeElement.innerHTML = timeConvert(response.data.sys.sunrise);
+  sunsetTimeElement.innerHTML = timeConvert(response.data.sys.sunset);
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
@@ -139,7 +139,7 @@ function cToF(event) {
     return;
   }
   let tempElement = document.querySelector(".searched_city-info__temp");
-  let fTempConvert = (celsiusTemperatuire * 9) / 5 + 32;
+  let fTempConvert = (celsiusTemperature * 9) / 5 + 32;
   tempElement.innerHTML = fTempConvert;
 
   temperatureType = "farenheit";
