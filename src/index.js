@@ -128,6 +128,7 @@ function changedDate(date) {
 let temperatureType = "celsius";
 
 function cToF(event) {
+  event.preventDefault();
   if (temperatureType === "farenheit") {
     return;
   }
@@ -139,6 +140,7 @@ function cToF(event) {
 }
 
 function fToC(event) {
+  event.preventDefault();
   if (temperatureType === "celsius") {
     return;
   }
