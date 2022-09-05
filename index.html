@@ -11,252 +11,140 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="widget-wrapper">
-    <div class="weather-widget">
-      <header class="weather-widget__header">
-        <form class="search-form">
-        <input
-          class="search-form__input"
-          type="text"
-          value=""
-          placeholder="Enter your city"
-        />
-        <button class="search-form_button search_button" type="button">
-        <i class="bi bi-search"></i>   
-        </button>
-        <button class="search-form_button location_button" type="button">
-        <i class="bi bi-geo-alt-fill"></i>
-        </button>      
-    </form> 
-    </header>
-        <div class="day-base-info ">
-        <div class="searched_city">
+      <div class="weather-widget">
+        <header class="weather-widget__header">
+          <form class="search-form" method="post">
+            <input
+              class="search-form__input"
+              type="text"
+              name="text"
+              value=""
+              placeholder="Enter your city"
+            />
+            <button class="search-form_button search_button" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+            <button class="search-form_button location_button" type="button">
+              <i class="bi bi-geo-alt-fill"></i>
+            </button>
+          </form>
+        </header>
+        <div class="day-base-info">
+          <div class="searched_city">
             <h1 class="searched_city-info">
-            <i class="bi bi-geo">
-            </i> 
-            <span class="searched_city_name"> Kyiv </span>
-          </h1>
-          <p class="searched_city_dateChange">
-          July 24
-          <br />
-          Sunday 16:30
-          </p>
+              <i class="bi bi-geo"> </i>
+              <span class="searched_city_name"> Kyiv </span>
+            </h1>
+            <p class="searched_city_dateChange">
+              July 24
+              <br />
+              Sunday 16:30
+            </p>
+
             <div class="weather_indicator_wrapper">
               <p class="searched_city-info__temp">26</p>
-              <div class="weather_indicator_sign">
-            <button class="weather_indicator celsium"type="button" >
-              ℃
-            </button>
-            |
-            <button class="weather_indicator fahrenheit"type="button" >
-              ℉
-            </button>
+              <p class="weather_indicator celsium">℃</p>
+            </div>
+            <img src="svg/fewclouds.svg" width="100px" id="icon" alt="" />
           </div>
-          </div>
-              <image
-                  src="svg/fewclouds.svg"
-                  width="100px" 
-               
-                  id="icon"
-                  alt=""
-                />
-          </div>
-  <div class="card day-detailed-info">
-  <div class="card-body day-detailed-info__content">
-    <p class="card-text ">
-      <div class="day-detailed-info__line">
+          <div class="card day-detailed-info">
+            <div class="card-body day-detailed-info__content">
+              <div class="day-detailed-info__line">
                 <span class="day-detailed-info__icon">
                   <i class="bi bi-sunrise"></i>
                 </span>
-                <p class="day-detailed-info__text">Sunrise 
-                  <p class="sunrise_time changedDay_weather_info">05:16</p> </p>
-       </div>
-      <div class="day-detailed-info__line">
+                <div class="day-detailed-info__text">
+                  Sunrise
+                  <span class="sunrise_time changedDay_weather_info">
+                    05:16
+                  </span>
+                </div>
+              </div>
+              <div class="day-detailed-info__line">
                 <span class="day-detailed-info__icon">
                   <i class="bi bi-sunset"></i>
                 </span>
-                <p class="day-detailed-info__text">Sunset 
-                  <p class="sunset_time changedDay_weather_info">20:54</p>
-                   </p>
-       </div>
-      <div class="day-detailed-info__line">
+                <div class="day-detailed-info__text">
+                  Sunset
+                  <span class="sunset_time changedDay_weather_info">
+                    20:54
+                  </span>
+                </div>
+              </div>
+              <div class="day-detailed-info__line">
                 <span class="day-detailed-info__icon">
                   <i class="bi bi-thermometer-half"></i>
                 </span>
-                <p class="day-detailed-info__text">Feels like 
-                  <p class="feelsLikeTemp changedDay_weather_info">27</p> ℃ </p>
-        </div>
-      <div class="day-detailed-info__line">
+                <div class="day-detailed-info__text">
+                  Feels like
+                  <span class="feelsLikeTemp changedDay_weather_info">27</span>
+                  ℃
+                </div>
+              </div>
+              <div class="day-detailed-info__line">
                 <span class="day-detailed-info__icon">
                   <i class="bi bi-moisture"></i>
                 </span>
-                <p class="day-detailed-info__text">Humidity 
-                  <p class="Humidity changedDay_weather_info">
-                    49
-                  </p>
-                   % </p>
-        </div>
-      <div class="day-detailed-info__line">
+                <div class="day-detailed-info__text">
+                  Humidity
+                  <span class="Humidity changedDay_weather_info">49</span>
+                  %
+                </div>
+              </div>
+              <div class="day-detailed-info__line">
                 <span class="day-detailed-info__icon">
                   <i class="bi bi-wind"></i>
                 </span>
-                <p class="day-detailed-info__text">Wind 
-                  <p class="wind_speed changedDay_weather_info">
-                    11
-                  </p>
-                   km/h
-                  </p>
-        </div>
-      <div class="day-detailed-info__line">
-        <span class="day-detailed-info__icon">
-                  <i class="bi bi-stopwatch"></i>
-            </span>
-                <p class="day-detailed-info__text">Pressure 
-                  <p class="Pressure_data changedDay_weather_info">
-                    1012 
-                  </p> 
-                   hPA
-                  </p>
-        </div>
-      </p>  
-  </div>
-  </div>
-  </div>
-<footer class="weather-widget__footer">
-    <div class="weather_by_hours">
-   <div class="weather_by_hours_item" >
-              <time class="weather_by_hours__time">17:00</time>
-              <span class="weather_by_hours__icon">
-              <i class="bi bi-clouds"></i>
-              </span>
-              <p class="weather_by_hours__temp">26 ℃</p>
-               </div>
-    <div class="weather_by_hours_item"> 
-                <time class="weather_by_hours__temp">18:00</time>
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-clouds icons_by_hours"></i>
-                </span>
-                <p class="weather_by_hours__temp">25 ℃</p>
+                <div class="day-detailed-info__text">
+                  Wind
+                  <span class="wind_speed changedDay_weather_info">11</span>
+                  km/h
+                </div>
               </div>
-               <div class="weather_by_hours_item">
-                 <time class="weather_by_hours__time">19:00</time>
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-clouds icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">24 ℃</p> 
-</div>
-                <div class="weather_by_hours_item"> 
-                  <time class="weather_by_hours__time">20:00</time>  
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-cloud-rain icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">23 ℃</p> 
-</div>
-                 <div class="weather_by_hours_item">
-                    <time class="weather_by_hours__time">21:00</time>
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-cloud-rain icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">21 ℃</p>
-</div>
-                  <div class="weather_by_hours_item">
-                    <time class="weather_by_hours__time">22:00</time>
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-clouds icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">21 ℃</p>
-</div>
-                  <div class="weather_by_hours_item">
-                    <time class="weather_by_hours__time">23:00</time>
-               <span class="weather_by_hours__icon">
-            <i class="bi bi-cloud-rain icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">20 ℃</p>
-</div>
-<div class="weather_by_hours_item">
-   <time class="weather_by_hours__time">00:00</time> 
-                <span class="weather_by_hours__icon">
-                <i class="bi bi-cloud-moon icons_by_hours"></i>
-</span>
-<p class="weather_by_hours__temp">19 ℃
-</p>
-</div>
-    </div>    
-    <div class="forecast-by-days">
-   <div class="forecast-by-days_item">
-    <div class="forecast-by-days_day">Monday</div>
-  <span class="forecast-by-days__icon">
-    <i class="bi bi-cloud-sun icon-forecast"></i>
-    </span>
-    <p class="forecast-by-days__temp">
-      <span class="forecast-by-days_day_temp">
-      25℃  
-    </span>
-      | 16℃</p>  
-    </div> 
-     <div class="forecast-by-days_item">
-    <div class="forecast-by-days_day">Tuesday</div>
-  <span class="forecast-by-days__icon">
-    <i class="bi bi-cloud-sun icon-forecast"></i>
-    </span>
-    <p class="forecast-by-days__temp">
-      <span class="forecast-by-days_day_temp">
-      28℃  
-    </span>
-      | 14℃</p>  
-    </div>
-     <div class="forecast-by-days_item">
-    <div class="forecast-by-days_day">Wednesday</div>
-  <span class="forecast-by-days__icon">
-    <i class="bi bi-cloud-sun icon-forecast"></i>
-    </span>
-    <p class="forecast-by-days__temp">
-      <span class="forecast-by-days_day_temp">
-      29℃  
-    </span>
-      | 16℃</p>  
-    </div>
-    <div class="forecast-by-days_item">
-    <div class="forecast-by-days_day">Thursday</div>
-  <span class="forecast-by-days__icon">
-    <i class="bi bi-cloud-sun icon-forecast"></i>
-    </span>
-    <p class="forecast-by-days__temp">
-      <span class="forecast-by-days_day_temp">
-      28℃  
-    </span>
-      | 17℃</p>  
-    </div>
-    <div class="forecast-by-days_item">
-    <div class="forecast-by-days_day">Friday</div>
-  <span class="forecast-by-days__icon">
-    <i class="bi bi-cloud-sun icon-forecast"></i>
-    </span>
-    <p class="forecast-by-days__temp">
-      <span class="forecast-by-days_day_temp">
-      27℃  
-    </span>
-      | 17℃</p>  
-    </div>
-  </div>
-  </div>
-     
- </footer> 
-  </div>
-<div class="codder">
-  <div class="codder_item">
-    <a class="codderLinkGit" href="https://github.com/LesiaZhereb/Weather-App_Final-project" >Open-source code</a>
-<p>, by Lesia Zhereb</p> 
-</div>
+              <div class="day-detailed-info__line">
+                <span class="day-detailed-info__icon">
+                  <i class="bi bi-stopwatch"></i>
+                </span>
+                <div class="day-detailed-info__text">
+                  Pressure
+                  <span class="Pressure_data changedDay_weather_info">
+                    1012
+                  </span>
+                  hPA
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="weather-widget__footer">
+          <div class="weather_by_hours"></div>
+          <div class="forecast-by-days" id="forecast_by_days"></div>
+        </footer>
+      </div>
 
-</div>
-<script src="src/index.js"></script>
-</body>
+      <div class="codder">
+        <div class="codder_item">
+          <a
+            class="codderLinkGit"
+            href="https://github.com/LesiaZhereb/Weather-App_Final-project"
+          >
+            Open-source code
+          </a>
+          <p>, by Lesia Zhereb</p>
+        </div>
+      </div>
+    </div>
 
+    <script src="src/index.js"></script>
+  </body>
 </html>

@@ -92,26 +92,20 @@ body {
   align-content: stretch;
   justify-content: center;
   align-items: flex-start;
-  margin-bottom: 10px;
 }
-.weather_indicator_sign {
-  display: inline-block;
-  margin-left: 5px;
-}
-.weather_indicator {
-  border: 1px solid transparent;
-  background: rgba(235, 233, 238, 0);
-  color: #ffffff;
-}
-.weather_indicator:hover {
-  background: rgba(235, 233, 238, 0.5);
-  border-radius: 10px;
-  transition: 100ms;
-}
-.weather_indicator:focus {
+.celsium {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  padding: 1px 4px;
   border: 1px solid white;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: rgba(235, 233, 238, 0);
+  color: #ffffff;
+  font-size: 12px;
 }
 .searched_city-info__temp {
   margin: 0 0 6px;
@@ -164,7 +158,7 @@ body {
   color: white;
 }
 .weather_by_hours_item {
-  margin: 0 30px 20px;
+  margin: 0 25px 20px;
   text-align: center;
   font-size: 22px;
 }
@@ -175,10 +169,8 @@ body {
   margin: 0;
 }
 .weather_by_hours__icon {
-  display: block;
-  margin: 10px 0;
-  font-size: 32px;
-  line-height: 1;
+  width: 50%;
+  height: auto;
 }
 .forecast-by-days {
   display: flex;
@@ -188,9 +180,9 @@ body {
   color: #ffffff;
 }
 .forecast-by-days_item {
-  flex-basis: 17%;
-  max-width: 17%;
-  min-width: 170px;
+  flex-basis: 10%;
+  max-width: 16%;
+  min-width: 160px;
   flex-grow: 1;
   margin: 0 10px 20px;
   padding: 15px;
