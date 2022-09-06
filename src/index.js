@@ -120,6 +120,7 @@ function timeConvert(unixTimestamp) {
   return time;
 }
 function showTemperature(response) {
+  console.log(response.data);
   let cityElement = document.querySelector(".searched_city_name");
   let sunriseTimeElement = document.querySelector(".sunrise_time");
   let sunsetTimeElement = document.querySelector(".sunrise_time");
