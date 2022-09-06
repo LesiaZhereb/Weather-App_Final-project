@@ -6,7 +6,7 @@ let currentDate = document.querySelector(".searched_city_dateChange");
 let celsiusTemperature = "0";
 
 function getForecastByCoordinates(coordinates) {
-  const apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  const apiKey = "22cfc19c6b9ae4b5cf96686bcd869368";
   const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecastbyDays);
   axios.get(apiUrl).then(displayForecastByHours);
@@ -155,7 +155,7 @@ function changeCity(event) {
 }
 
 function getCityWeather(city) {
-  const apiKey = "ee4b364710ec488f16dbd059f25342e2";
+  const apiKey = "cf1fdc53a1ee4c30222287c83e72dc6d";
   const apiCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
   if (city) {
@@ -166,7 +166,7 @@ function getCityWeather(city) {
 }
 
 function handlePosition(position) {
-  const apiKey = "ee4b364710ec488f16dbd059f25342e2";
+  const apiKey = "cf1fdc53a1ee4c30222287c83e72dc6d";
   const units = "metric";
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
