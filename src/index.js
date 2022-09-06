@@ -116,7 +116,7 @@ function timeConvert(timestamp) {
   let minutes = date.getMinutes();
   const updateHours = hours < 10 ? "0" + hours : hours;
   const updateMinutes = minutes < 10 ? "0" + minutes : minutes;
-  const time = updateHours + ":" + updateMinutes;
+  let time = updateHours + ":" + updateMinutes;
   return time;
 }
 function showTemperature(response) {
