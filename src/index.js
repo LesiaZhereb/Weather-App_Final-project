@@ -110,8 +110,8 @@ let iconConvert = {
   "50n": "mist",
 };
 
-function timeConvert(unixTimestamp) {
-  const date = new Date(unixTimestamp);
+function timeConvert(timestamp) {
+  const date = new Date(timestamp * 1000);
   let hours = date.getHours();
   let minutes = date.getMinutes();
   const updateHours = hours < 10 ? "0" + hours : hours;
