@@ -111,7 +111,7 @@ let iconConvert = {
 };
 
 function timeConvert(unixTimestamp) {
-  const date = new Date(unixTimestamp * 1000);
+  const date = new Date(unixTimestamp);
   let hours = date.getHours();
   let minutes = date.getMinutes();
   const updateHours = hours < 10 ? "0" + hours : hours;
